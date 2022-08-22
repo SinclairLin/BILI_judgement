@@ -1,7 +1,7 @@
 name: Judgement
 on: 
   schedule:
-    - cron: 0 16 8 ? * *
+    - cron: '37 8 * * *'
 jobs:
   build:
     runs-on: ubuntu-18.04
