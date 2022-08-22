@@ -1,5 +1,5 @@
 name: Judgement
-on: 
+on:
   workflow_dispatch:
   schedule:
     - cron: '37 8 * * *'
@@ -23,11 +23,15 @@ jobs:
         git clone https://github.com/dd178/BILI_judgement.git
         cd BILI_judgement
         cp ./config/config.json.example ./config/config.json
-    - name: Run 
+    - name: Modify json value
       env:
         SESSDATA: ${{ secrets.SESSDATA }}
         bili_jct: ${{ secrets.bili_jct }}
         DedeUserID: ${{ secrets.DedeUserID }}
       run: |
-        cd BILI_judgement
-        python3 judgement.py
+        cd BILI_judgement/config
+        sed -i "s/\"SESSDATA\":.*$/\"SESSDATA\": \"${{ secrets.SESSDATA }}\",/" config.json
+        sed -i "s/\"bili_jct\":.*$/\"bili_jct\": \"${{ secrets.bili_jct }}\",/" config.json        
+        sed -i "s/\"DedeUserID\":.*$/\"DedeUserID\": \"${{ secrets.DedeUserID }}\",/" config.json
+    - name: Run python file
+      run: python3 judgement.py
