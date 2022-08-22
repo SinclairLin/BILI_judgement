@@ -13,18 +13,11 @@
     "users": [
         {
             "cookieDatas": {  // 账号一
-                "SESSDATA": "xxxxx",
-                "bili_jct": "xxxxx",
-                "DedeUserID": "xxxxx"
+                "SESSDATA": "",
+                "bili_jct": "",
+                "DedeUserID": ""
             }
         },
-        {
-            "cookieDatas": {  // 账号二
-                "SESSDATA": "xxxxx",
-                "bili_jct": "xxxxx",
-                "DedeUserID": "xxxxx"
-            }
-        }
     ],
     "push": {  // 推送
         "enable": "false",  // 开关，false为关闭推送，true或其他任意字段为开启推送
