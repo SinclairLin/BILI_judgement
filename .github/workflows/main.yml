@@ -2,6 +2,8 @@ name: Judgement
 on: 
   schedule:
     - cron: '37 8 * * *'
+  watch:
+    types: [started]
 jobs:
   build:
     runs-on: ubuntu-18.04
