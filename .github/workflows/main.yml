@@ -5,17 +5,28 @@ on:
   watch:
     types: [started]
 jobs:
-  build:
-    runs-on: ubuntu-18.04
+  judgement:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 start
     steps:
-    - name: Installation depends
-      run: |
-        sudo apt-get update
-        sudo apt-get -y install python wget
-    - name: Clone source code
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Set up Python #安装python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.9
+    - name: Install requirements
+      run: pip install aiohttp
+    - name: Clone 
       run: |
         git clone https://github.com/dd178/BILI_judgement.git
-    - name: Run judgement.py
+        cd BILI_judgement
+        cp ./config/config.json.example ./config/config.json
+    - name: Run 
+      env:
+        SESSDATA: ${{ secrets.SESSDATA }}
+        bili_jct: ${{ secrets.bili_jct }}
+        DedeUserID: ${{ secrets.DedeUserID }}
       run: |
         cd BILI_judgement
-        python judgement.py
+        python3 judgement.py
