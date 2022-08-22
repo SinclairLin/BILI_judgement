@@ -32,6 +32,8 @@ jobs:
         cd BILI_judgement/config
         sed -i "s/\"SESSDATA\":.*$/\"SESSDATA\": \"${{ secrets.SESSDATA }}\",/" config.json
         sed -i "s/\"bili_jct\":.*$/\"bili_jct\": \"${{ secrets.bili_jct }}\",/" config.json        
-        sed -i "s/\"DedeUserID\":.*$/\"DedeUserID\": \"${{ secrets.DedeUserID }}\",/" config.json
+        sed -i "s/\"DedeUserID\":.*$/\"DedeUserID\": \"${{ secrets.DedeUserID }}\"/" config.json
     - name: Run python file
-      run: python3 judgement.py
+      run: |
+        cd BILI_judgement
+        python3 judgement.py
