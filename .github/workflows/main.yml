@@ -1,0 +1,19 @@
+name: Judgement
+on: 
+  schedule:
+    - cron: 0 16 8 ? * *
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Installation depends
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install python wget
+    - name: Clone source code
+      run: |
+        git clone https://github.com/dd178/BILI_judgement.git
+    - name: Run judgement.py
+      run: |
+        cd BILI_judgement
+        python judgement.py
