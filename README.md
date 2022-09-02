@@ -8,7 +8,9 @@
 * 运行 `cd BILI_judgement` 进入项目文件夹，然后运行 `cp ./config/config.json.example ./config/config.json` 复制并重命名一份配置文件
 * 抓取 `SESSDATA`、`bili_jct`、`DedeUserID` 三个值填入 `config.json` ，支持多账号
 * 使用 `python judgement.py` 运行脚本
-
+## Github Actions:
+- 仅为个人方便使用
+- 请fork 自行研究
 ## 特别声明:
 * 本仓库发布的BILI_judgement项目中涉及的任何解锁和解密分析脚本，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断.
 
