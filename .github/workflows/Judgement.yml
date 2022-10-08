@@ -2,7 +2,7 @@ name: Judgement
 on:
   workflow_dispatch:
   schedule:
-    - cron: '37 0 * * *'
+    - cron: '35 1 * * *'
   watch:
     types: [started]
 jobs:
