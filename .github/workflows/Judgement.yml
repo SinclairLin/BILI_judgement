@@ -2,13 +2,12 @@ name: Judgement
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35 1 * * *'
+    - cron: '35 0 * * *'
   watch:
     types: [started]
 jobs:
   judgement:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 start
     steps:
     - name: Checkout
       uses: actions/checkout@master
