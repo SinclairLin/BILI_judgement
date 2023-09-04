@@ -19,13 +19,31 @@
         }
     ],
     "push": {
-        "enable": "false",
+        "enable": false,
         "msgtpye": ["CookieExpires", "UnknownError", "DailyMissions"],
         "wxpush": {
+            "enable": false,
             "corpid": "xxxxx",
             "secret": "xxxxx",
             "agentid": 1000001,
             "touser": "@all"
+        },
+        "tgpush": {
+            "enable": false,
+            "bot_token": "xxxxx:xxxxx",
+            "chat_id": "-100xxxxx"
+        },
+        "server": {
+            "enable": false,
+            "sendkey": "xxxxx"
+        },
+        "ijingniu": {
+            "enable": false,
+            "channelkey": "xxxxx"
+        },
+        "pushplus":{
+            "enable": false,
+            "token": "xxxxx"
         }
     }
 }
